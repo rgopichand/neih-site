@@ -1,12 +1,92 @@
-     <!doctype html>
-     <html lang="en">
-     <head>
-       <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>NEIH Technology</title>
-     </head>
-     <body>
-       <h1>Welcome to neih.technology</h1>
-       <p>Site coming soon.</p>
-     </body>
-     </html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> New England Innovation Hub </title>
+<meta name="description" content="IT infrastructure, ITSM and automation — ServiceNow, CMDB, ITOM, integrations.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#3fb6a8}
+@media (prefers-color-scheme:light){:root{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--text:#1f2328;--muted:#57606a;--accent:#0f766e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:1}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+nav .logo{font-weight:700;color:var(--text)}
+nav .links{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+.btn{display:inline-block;padding:8px 16px;border:1px solid var(--accent);border-radius:6px;font-weight:600}
+.btn.solid{background:var(--accent);color:#fff}
+.hero{padding:72px 0 48px}
+.hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 8px}
+.hero p{color:var(--muted);font-size:18px;max-width:640px}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:22px;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.tag{display:inline-block;font-size:12px;color:var(--accent);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:14px}
+footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="logo" href="#">neih.technology</a>
+  <div class="links">
+    <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#ideas">Ideas</a><a href="#contact">Contact</a>
+    <a class="btn" href="https://mail.neih.technology" target="_blank" rel="noopener">Webmail</a>
+  </div>
+</nav></div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Vijetha Ramini</h1>
+    <p>IT infrastructure and automation leader with ~25 years across ITSM, CMDB, ITOM and enterprise integrations, connecting tools so operations teams see the full picture.</p>
+    <a class="btn solid" href="#contact">Get in touch</a>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I work at the intersection of IT operations and automation, from Linux, Windows and network administration to monitoring, asset management, security operations, IAM and DevOps. Today I focus on ServiceNow, discovery and integrations that keep the CMDB accurate and useful.</p>
+  </section>
+
+  <section id="expertise">
+    <h2>Expertise</h2>
+    <div class="chips">
+      <span>ServiceNow ITSM / ITOM / CMDB</span><span>PowerShell automation</span><span>Device42</span><span>NetBox</span>
+      <span>AWS discovery</span><span>Nutanix</span><span>IBM AIX / VIOS</span><span>IT asset management</span>
+      <span>Vulnerability management</span><span>IAM &amp; MDM</span><span>HRSD / CSM / FSM</span><span>Capex / opex cost management</span>
+    </div>
+  </section>
+
+  <section id="ideas">
+    <h2>Ideas &amp; Notes</h2>
+    <div class="grid" id="ideaGrid"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:YOUR-EMAIL@neih.technology">YOUR-EMAIL@neih.technology</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">linkedin.com/in/YOUR-PROFILE</a></p>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> NEIH Technology</div></footer>
+
+<script>
+/* ===== ADD NEW IDEAS HERE: copy a line, edit, commit. Newest first. ===== */
+const ideas = [
+  {tag:"Concept",  title:"Change-to-operations visibility", text:"Linking change records to the services, assets and teams they touch."},
+  {tag:"Automation", title:"Self-healing CMDB", text:"Discovery and procurement data reconciling assets automatically."},
+  {tag:"Security", title:"CVE to CI in minutes", text:"Joining NVD and CISA KEV feeds to the assets actually exposed."}
+];
+document.getElementById("ideaGrid").innerHTML = ideas.map(i =>
+  `<div class="card"><span class="tag">${i.tag}</span><h3>${i.title}</h3><p>${i.text}</p></div>`).join("");
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
